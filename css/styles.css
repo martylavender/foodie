@@ -1,0 +1,76 @@
+body{
+    padding: 15px;
+}
+
+#headerwell {
+    height: 150px;
+    line-height: 125px;
+    font-size: 50px;
+}
+
+#formcontainer {
+    width: 250px;
+}
+
+#login-dd{
+    min-width: 275px;
+    min-height: 280px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    color: white;
+    
+}
+#login-dp .help-block{
+    font-size:12px    
+}
+#login-dp .bottom{
+    
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons{
+    margin:12px 0    
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    
+}
+.btn-fb:hover{
+    color: #fff;
+    
+}
+.btn-tw{
+    color: #fff;
+    
+}
+.btn-tw:hover{
+    color: #fff;
+    
+}
+@media(max-width:768px){
+    #login-dp{
+        
+        color: #fff;
+    }
+    #login-dp .bottom{
+        
+        border-top:0 none;
+    }
+}
+
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  top: 40%;
+  height: 100px;
+  margin-top: -40px; /* account for padding and border if not using box-sizing: border-box; */
+}

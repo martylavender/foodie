@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="foodie@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="foodie">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="listtest"/>
+    <schema id="5" parent="1" name="littletodoapp"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="paginationtestdb"/>
+    <schema id="8" parent="1" name="performance_schema"/>
+    <schema id="9" parent="1" name="phpmyadmin"/>
+    <schema id="10" parent="1" name="registration"/>
+    <schema id="11" parent="1" name="test"/>
+    <table id="12" parent="2" name="ingredientlist"/>
+    <table id="13" parent="2" name="ingredients"/>
+    <table id="14" parent="2" name="recipes"/>
+    <table id="15" parent="2" name="tags"/>
+    <table id="16" parent="2" name="users"/>
+    <column id="17" parent="12" name="listid">
+      <Position>1</Position>
+      <DataType>int(250)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="18" parent="12" name="recipeid">
+      <Position>2</Position>
+      <DataType>int(250)|0</DataType>
+    </column>
+    <column id="19" parent="12" name="ingredientid">
+      <Position>3</Position>
+      <DataType>int(250)|0</DataType>
+    </column>
+    <index id="20" parent="12" name="ingredientid">
+      <ColNames>ingredientid</ColNames>
+    </index>
+    <index id="21" parent="12" name="recipeid">
+      <ColNames>recipeid</ColNames>
+    </index>
+    <key id="22" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>listid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="23" parent="12" name="ingredientlist_ibfk_1">
+      <ColNames>recipeid</ColNames>
+      <RefSchemaName>foodie</RefSchemaName>
+      <RefTableName>recipes</RefTableName>
+      <RefColNames>recipeid</RefColNames>
+    </foreign-key>
+    <foreign-key id="24" parent="12" name="ingredientlist_ibfk_2">
+      <ColNames>ingredientid</ColNames>
+      <RefSchemaName>foodie</RefSchemaName>
+      <RefTableName>ingredients</RefTableName>
+      <RefColNames>ingredientid</RefColNames>
+    </foreign-key>
+    <column id="25" parent="13" name="ingredientid">
+      <Position>1</Position>
+      <DataType>int(250)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="13" name="ingredientname">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <key id="27" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ingredientid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="28" parent="14" name="recipeid">
+      <Position>1</Position>
+      <DataType>int(250)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="29" parent="14" name="recipename">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="30" parent="14" name="recipedescription">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="31" parent="14" name="cooktime">
+      <Position>4</Position>
+      <DataType>time|0</DataType>
+    </column>
+    <key id="32" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>recipeid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="15" name="taggid">
+      <Position>1</Position>
+      <DataType>int(250)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="34" parent="15" name="tagname">
+      <Position>2</Position>
+      <DataType>int(250)|0</DataType>
+    </column>
+    <column id="35" parent="15" name="recipeid">
+      <Position>3</Position>
+      <DataType>int(250)|0</DataType>
+    </column>
+    <index id="36" parent="15" name="recipeid">
+      <ColNames>recipeid</ColNames>
+    </index>
+    <key id="37" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>taggid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="38" parent="15" name="tags_ibfk_1">
+      <ColNames>recipeid</ColNames>
+      <RefSchemaName>foodie</RefSchemaName>
+      <RefTableName>recipes</RefTableName>
+      <RefColNames>recipeid</RefColNames>
+    </foreign-key>
+    <column id="39" parent="16" name="userid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="40" parent="16" name="username">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="16" name="password">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="16" name="userstatus">
+      <Position>4</Position>
+      <DataType>enum(&apos;Y&apos;, &apos;N&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;N&apos;</DefaultExpression>
+    </column>
+    <column id="43" parent="16" name="token">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="44" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>userid</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
